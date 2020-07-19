@@ -1,0 +1,21 @@
+body {
+    height: 900px;
+    margin: 0;
+}
+
+#wrapper {
+    height: 100%;
+}
+
+#header {
+    height: 12%;
+    background-color: #cccccc;
+}
+
+#nav_menu ul {
+    margin: 0;
+}
+
+#nav_menu li {
+    float: left;
+}
