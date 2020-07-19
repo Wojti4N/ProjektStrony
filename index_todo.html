@@ -11,8 +11,7 @@
 
             <div id="header">
 
-            <img src="logo.png">
-
+            <img src="logo2.png">
 
                 <ul>
                     <a href="index.html"><li>MENU</li></a>
@@ -21,19 +20,81 @@
                     <a href="index_todo.html"><li>TO-DO</li></a>
                     <a href="index_videos.html"><li>FILMY</li></a>
                 </ul>
+
         </div>
+        
         <div id="section">
           
+            <div id="todolist">
 
+            <div id="myDIV" class="header">
+                <h2>Lista rzeczy do zrobienia</h2>
+                <input type="text" id="myInput" placeholder="Tytuł...">
+                <span onclick="newElement()" class="addBtn">Dodaj</span>
+              </div>
+              
+              <ul id="myUL">
+                <li class="list">Kupić masło</li>
+                <li class="list">Zapłacić rachunek</li>
+              </ul>
 
+              <script>
 
+      
+                var myNodelist = document.getElementsByClassName("list");
+                var i;
+                for (i = 0; i < myNodelist.length; i++) {
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                myNodelist[i].appendChild(span);
+                }
 
+               
+                var close = document.getElementsByClassName("close");
+                var i;
+                for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+                }
+            
+                function newElement() {
+                var li = document.createElement("li");
+                var inputValue = document.getElementById("myInput").value;
+                var t = document.createTextNode(inputValue);
+                li.appendChild(t);
+                if (inputValue === '') {
+                    alert("You must write something!");
+                } else {
+                    document.getElementById("myUL").appendChild(li);
+                }
+                document.getElementById("myInput").value = "";
+
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                li.appendChild(span);
+
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                    }
+                }
+                }
+
+            </script>
+</div>
 
         </div>
 
         <div id="footer">
             Informujemy, iż w celu optymalizacji treści dostępnych w naszym serwisie,
-             dostosowania ich do Państwa indywidualnych potrzeb korzystamy z informacji zapisanych za pomocą plików cookies na urządzeniach końcowych użytkowników. Pliki cookies użytkownik może kontrolować za pomocą ustawień swojej przeglądarki internetowej. Dalsze korzystanie z naszego serwisu internetowego, bez zmiany ustawień przeglądarki internetowej oznacza, 
+             dostosowania ich do Państwa indywidualnych potrzeb korzystamy z informacji zapisanych za pomocą plików cookies na urządzeniach końcowych użytkowników. Dalsze korzystanie z naszego serwisu internetowego, bez zmiany ustawień przeglądarki internetowej oznacza, 
             iż użytkownik akceptuje stosowanie plików cookies.
 
         </div>
